@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Scholar Public School ubauro</title>
+<style>
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #F3F4F6;
+    color: #111827;
+}
+/* Header */
+header {
+    background: #1E3A8A;
+    color: white;
+    padding: 10px 0;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+header .logo {
+    height: 70px;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+header nav ul li a:hover {
+    color: #73fb24;
+}
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1596496056073-7c8476d0b056?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    color: #6ebd39;
+    margin: 0;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: white;
+    margin: 10px 0 20px;
+}
+.hero .btn {
+    background: #FBBF24;
+    color: #1E3A8A;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+.hero .btn:hover { transform: scale(1.1); }
+
+/* Features */
+.features { padding: 60px 20px; text-align: center; }
+.features h2 { color: #1E3A8A; font-size: 2.2rem; margin-bottom: 40px; }
+.feature-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.feature-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 250px; transition: transform 0.3s; }
+.feature-card:hover { transform: translateY(-10px); }
+.feature-card h3 { margin-bottom: 10px; color: #1E3A8A; }
+
+/* Gallery */
+.gallery {
+    padding: 60px 20px;
+    text-align: center;
+    background: #E0F2FE;
+}
+.gallery h2 {
+    color: #1E3A8A;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.gallery-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+}
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+/* Admissions */
+.admissions { padding: 60px 20px; background: #E0E7FF; text-align: center; }
+.admissions h2 { color: #1E3A8A; margin-bottom: 30px; }
+form input { display: block; width: 80%; margin: 10px auto; padding: 12px; border-radius: 8px; border: 1px solid #ccc; }
+form button { padding: 12px 25px; background: #1E3A8A; color: #FBBF24; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: transform 0.3s; }
+form button:hover { transform: scale(1.05); }
+
+/* Staff */
+.staff { padding: 60px 20px; text-align: center; }
+.staff h2 { color: #1E3A8A; margin-bottom: 40px; }
+.staff-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.staff-member h3 { margin: 10px 0 5px; color: #1E3A8A; }
+
+/* Contact */
+.contact { padding: 60px 20px; background: #F3F4F6; text-align: center; }
+.contact h2 { color: #1E3A8A; margin-bottom: 20px; }
+
+/* Footer */
+footer { background: #1E3A8A; color: white; text-align: center; padding: 20px 0; }
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+    <img src="logo.png/logo.jpeg" alt="School Logo" class="logo">
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#staff">Staff</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+</header>
+
+<section id="home" class="hero">
+<h1>Welcome to The Scholar Public School®</h1>
+<p>Excellence in Education for a Brighter Future</p>
+<a href="#admissions" class="btn">Apply Now</a>
+</section>
+
+<section id="about" class="features">
+<h2>Why Choose Us</h2>
+<div class="feature-grid">
+    <div class="feature-card"><h3>Experienced Teachers</h3><p>Highly qualified staff.</p></div>
+    <div class="feature-card"><h3>Safe Campus</h3><p>Secure & friendly environment.</p></div>
+    <div class="feature-card"><h3>Smart Classes</h3><p>Modern tech-enabled classrooms.</p></div>
+</div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="gallery">
+  <h2>Our School Gallery</h2>
+  <div class="gallery-container">
+    <video preload="auto" src="video/video.mp4" controls>
+    </video>
+    <img src="pictures/photo1.jpeg" alt="Photo 1" class="gallery-img">
+    <img src="pictures/photo2.jpeg" alt="Photo 2" class="gallery-img">
+    <img src="pictures/photo3.jpeg" alt="Photo 3" class="gallery-img">
+    <img src="pictures/photo4.jpeg" alt="Photo 4" class="gallery-img">
+    <img src="pictures/photo5.jpeg" alt="Photo 5" class="gallery-img">
+    <img src="pictures/photo6.jpeg" alt="Photo 6" class="gallery-img">
+    <img src="pictures/photo7.jpeg" alt="Photo 7" class="gallery-img">
+    <img src="pictures/photo8.jpeg" alt="Photo 8" class="gallery-img">
+    <img src="pictures/photo9.jpeg" alt="Photo 9" class="gallery-img">
+    <img src="pictures/photo10.jpeg" alt="Photo 10" class="gallery-img">
+    <img src="pictures/photo11.jpeg" alt="Photo 11" class="gallery-img">
+    <img src="pictures/photo12.jpeg" alt="Photo 12" class="gallery-img">
+    <img src="pictures/photo13.jpeg" alt="Photo 13" class="gallery-img">
+    <img src="pictures/photo14.jpeg" alt="Photo 14" class="gallery-img">
+    <img src="pictures/photo15.jpeg" alt="Photo 15" class="gallery-img">
+    <img src="pictures/photo16.jpeg" alt="Photo 16" class="gallery-img">
+    <img src="pictures/photo17.jpeg" alt="Photo 17" class="gallery-img">
+    <img src="pictures/photo18.jpeg" alt="Photo 18" class="gallery-img">
+    <img src="pictures/photo19.jpeg" alt="Photo 19" class="gallery-img">
+    <img src="pictures/photo20.jpeg" alt="Photo 20" class="gallery-img">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<section id="admissions" class="admissions">
+<h2>Online Admissions</h2>
+<form>
+    <input type="text" placeholder="Student Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="text" placeholder="Class" required>
+    <input type="text" placeholder="Phone" required>
+    <button type="submit">Submit</button>
+</form>
+</section>
+
+<section id="staff" class="staff">
+<h2>Our Staff</h2>
+<div class="staff-grid">
+    <div class="staff-member"><h3>Mr. Syed Sajjid Mehmood</h3><p>Chairman</p></div>
+    <div class="staff-member"><h3>Mr. Syed Nabeel Qamar</h3><p>Principal</p></div>
+    <div class="staff-member"><h3>Mr. Abdul Ghaffar</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Mr. Naveed Gull</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Mr. Rashid Ali</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Mr. Abdul Saboor</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Miss Maryam</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Miss Mehreen</h3><p>Teacher</p></div>
+    <div class="staff-member"><h3>Miss Ayesha</h3><p>Teacher</p></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Us</h2>
+<p>Email: thescholars1123@gmail.com</p>
+<p>Phone: +92 313 3736973</p>
+<p>Phone: +92 300 3720021</p>
+<p>Address: Malik colony near Cafe Sejawal, Ubauro</p>
+</section>
+
+<footer>
+<p>&copy; 2025 The Scholar Public School ubauro, All Rights Reserved</p>
+</footer>
+
+<!-- JavaScript for Lightbox -->
+<script>
+const images = document.querySelectorAll(".gallery-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+
+images.forEach(img => {
+    img.addEventListener("click", () => {
+        lightbox.style.display = "block";
+        lightboxImg.src = img.src;
+    });
+});
+
+closeBtn.onclick = () => { lightbox.style.display = "none"; };
+
+window.onclick = (e) => {
+    if (e.target == lightbox) lightbox.style.display = "none";
+};
+</script>
+
+</body>
+</html>
